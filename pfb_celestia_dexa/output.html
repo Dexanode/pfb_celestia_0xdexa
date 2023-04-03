@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>PayForBlob Transaction Result</title>
+    <style>
+      /* CSS styles go here */
+      body {
+        background-color: #f2e6ff;
+        font-family: Arial, sans-serif;
+      }
+      
+      h1 {
+        color: #794fff;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      
+      p {
+        color: #794fff;
+        font-size: 16px;
+        margin: 10px 0;
+      }
+      
+      span {
+        color: #794fff;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>PayForBlob Transaction Result</h1>
+
+    <p>
+      Namespace ID: <span id="namespace_id"></span>
+    </p>
+
+    <p>
+      Data: <span id="data"></span>
+    </p>
+
+    <p>
+      Height: <span id="height"></span>
+    </p>
+
+    <p>
+      TxHash: <span id="txhash"></span>
+    </p>
+
+    <p>
+      Share Message: <span id="share_msg"></span>
+    </p>
+
+    <p>
+      Signer: <span id="signer"></span>
+    </p>
+
+    <script>
+      // JavaScript code for updating the result fields
+      function generateResultForm(namespaceId, data, height, txhash, shareMsg, signer) {
+  const resultForm = document.createElement("form");
+  resultForm.method = "GET";
+  resultForm.action = "home.html";
+
+  const namespaceInput = document.createElement("input");
+  namespaceInput.type = "hidden";
+  namespaceInput.name = "namespace_id";
+  namespaceInput.value = namespaceId;
+  resultForm.appendChild(namespaceInput);
+
+  const dataInput = document.createElement("input");
+  dataInput.type = "hidden";
+  dataInput.name = "data";
+  dataInput.value = data;
+  resultForm.appendChild(dataInput);
+
+  const heightInput = document.createElement("input");
+  heightInput.type = "hidden";
+  heightInput.name = "height";
+  heightInput.value = height;
+  resultForm.appendChild(heightInput);
+
+  const txhashInput = document.createElement("input");
+  txhashInput.type = "hidden";
+  txhashInput.name = "txhash";
+  txhashInput.value = txhash;
+  resultForm.appendChild(txhashInput);
+
+  const shareMsgInput = document.createElement("input");
+  shareMsgInput.type = "hidden";
+  shareMsgInput.name = "share_msg";
+  shareMsgInput.value = shareMsg;
+  resultForm.appendChild(shareMsgInput);
+
+  const signerInput = document.createElement("input");
+  signerInput.type = "hidden";
+  signerInput.name = "signer";
+  signerInput.value = signer;
+  resultForm.appendChild(signerInput);
+
+  const submitButton = document.createElement("button");
+  submitButton.type = "submit";
+  submitButton.textContent = "View Result";
+  resultForm.appendChild(submitButton);
+
+  return resultForm;
+}
+    </script>
+  </body>
+</html>
